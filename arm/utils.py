@@ -48,7 +48,7 @@ def stack_on_channel(x):
 
 def stack_on_channel2(x):
     # expect (B, T, C, ...)
-    return torch.cat(torch.split(x[None], 1, dim=1), dim=2).squeeze(1)
+    return torch.cat(torch.split(x[:,None], 1, dim=1), dim=2).squeeze(1)
 
 
 def _compute_initial_camera_pose(scene):
